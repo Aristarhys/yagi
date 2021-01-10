@@ -19,6 +19,7 @@ RUN apt-get -qq update && apt-get -qq install -y --no-install-recommends \
   && mkdir -p /usr/local/share/godot/templates \
   && mv ./templates/linux_x11_64_release /usr/local/share/godot/templates \
   && mv ./templates/windows_64_release.exe /usr/local/share/godot/templates \
+  && mv ./templates/osx.zip /usr/local/share/godot/templates \
   && rm -r ./templates \
   && mv ./Godot_v$GODOT_VERSION-${GODOT_VARIANT}_linux_headless.64 /usr/local/bin/godot \
   && apt-get -qq purge -y --auto-remove unzip curl \
