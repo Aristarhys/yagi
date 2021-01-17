@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV GODOT_VERSION=$godot_version
 ENV GODOT_VARIANT=$godot_variant
 
-RUN apt-get -qq update && apt-get -qq install -y --no-install-recommends \
+RUN install_packages \
   ca-certificates \
   git \
   git-lfs \
@@ -25,8 +25,6 @@ RUN apt-get -qq update && apt-get -qq install -y --no-install-recommends \
   && apt-get -qq purge -y --auto-remove unzip curl \
   && apt-get -qq autoremove -y \
   && apt-get -qq autoclean -y \
-  && rm -rf /var/lib/apt/lists/* \
-  && rm -rf /var/cache/apt \
   && rm -rf /tmp/*
 
 COPY entrypoint.sh /entrypoint.sh
