@@ -10,5 +10,5 @@ Clone this repo, change dockerfile, build and push.
 ```
 docker build --squash --rm -t <username>/yagi:latest .
 # after docker login
-docker push <username>/image --all-tags
+docker push <username>/yagi --all-tags
 ```
